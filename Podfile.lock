@@ -1,0 +1,20 @@
+PODS:
+  - FSCalendar (2.8.2)
+  - iOSDropDown (0.3.4)
+
+DEPENDENCIES:
+  - FSCalendar
+  - iOSDropDown
+
+SPEC REPOS:
+  trunk:
+    - FSCalendar
+    - iOSDropDown
+
+SPEC CHECKSUMS:
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+
+PODFILE CHECKSUM: 686af8f018db3a221452fb11b4c0d0d76dd95ffd
+
+COCOAPODS: 1.10.1

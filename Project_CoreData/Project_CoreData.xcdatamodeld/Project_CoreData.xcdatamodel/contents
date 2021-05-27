@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Admin" representedClassName="Admin" syncable="YES">
+        <attribute name="contacts" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="eventadd" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Events" inverseName="adminrelation" inverseEntity="Events"/>
+    </entity>
+    <entity name="Events" representedClassName="Events" syncable="YES">
+        <attribute name="eventAddress" optional="YES" attributeType="String"/>
+        <attribute name="eventDate" optional="YES" attributeType="String"/>
+        <attribute name="eventDescptn" optional="YES" attributeType="String"/>
+        <attribute name="eventImage" optional="YES" attributeType="Binary"/>
+        <attribute name="eventName" optional="YES" attributeType="String"/>
+        <attribute name="eventTicketAmnt" optional="YES" attributeType="String"/>
+        <attribute name="eventTicketCount" optional="YES" attributeType="String"/>
+        <relationship name="adminrelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Admin" inverseName="eventadd" inverseEntity="Admin"/>
+        <relationship name="eventtickets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TicketCounter" inverseName="eventrelation" inverseEntity="TicketCounter"/>
+    </entity>
+    <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="contact" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="ticketrelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TicketCounter" inverseName="userrelation" inverseEntity="TicketCounter"/>
+    </entity>
+    <entity name="TicketCounter" representedClassName="TicketCounter" syncable="YES">
+        <attribute name="ticketAmount" optional="YES" attributeType="String"/>
+        <attribute name="ticketDate" optional="YES" attributeType="String"/>
+        <attribute name="ticketEmail" optional="YES" attributeType="String"/>
+        <attribute name="ticketEventName" optional="YES" attributeType="String"/>
+        <attribute name="ticketNo" optional="YES" attributeType="String"/>
+        <attribute name="ticketUser" optional="YES" attributeType="String"/>
+        <relationship name="eventrelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Events" inverseName="eventtickets" inverseEntity="Events"/>
+        <relationship name="userrelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile" inverseName="ticketrelation" inverseEntity="Profile"/>
+    </entity>
+    <elements>
+        <element name="Admin" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Events" positionX="-36" positionY="45" width="128" height="178"/>
+        <element name="Profile" positionX="-54" positionY="18" width="128" height="118"/>
+        <element name="TicketCounter" positionX="-18" positionY="90" width="128" height="163"/>
+    </elements>
+</model>
